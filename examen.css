@@ -26,6 +26,10 @@
   animation: rotationBack 1s linear infinite;
   transform-origin: center center;
 }
+
+.destacat{
+  text-decoration-color: blue;
+}
     
 @keyframes rotation {
   0% {
