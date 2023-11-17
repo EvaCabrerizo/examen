@@ -2,10 +2,18 @@ const baseUrl = 'https://wizard-world-api.herokuapp.com';
 
 window.onload = async() => {
   const persons = await getAllCharacters();
-  
+  const houses = await getAllHouses();
+
   const spinnerHtmlElement = document.getElementById('spinner');
   spinnerHtmlElement.remove();
 
+  for (const house of houses) {
+    const mainHtmlElementH = document.getElementById('main');
+    const newElementH = document.createElement('div');
+    newElementH.innerHTML = `
+      <h2>${house.name}</h2>`
+     mainHtmlElementH.appendChild(newElementH);
+        }
 
   for (const person of persons) {
     const mainHtmlElement = document.getElementById('main');
@@ -36,7 +44,6 @@ async function getAllIngredients(id) {
   return data.ingredients;
 }
 
-
 async function elixirClicat(id,name) {
   const ingredients = await getAllIngredients(id);
   for (const ingredient of ingredients) {
@@ -62,8 +69,8 @@ async function addDestacat(firstName,lastName) {
 }
 }
 
-async function getAllCharacters() {
-  const response = await fetch(`${baseUrl}/Wizards`);
+async function getAllHouses() {
+  const response = await fetch(`${baseUrl}/Houses`);
   const data = await response.json();
   return data;
 }
