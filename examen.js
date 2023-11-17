@@ -2,7 +2,6 @@ const baseUrl = 'https://wizard-world-api.herokuapp.com';
 
 window.onload = async() => {
   const persons = await getAllCharacters();
-  const elixirs = await getAllElixirs();
   
   const spinnerHtmlElement = document.getElementById('spinner');
   spinnerHtmlElement.remove();
@@ -13,7 +12,7 @@ window.onload = async() => {
       const newElement = document.createElement('div');
       newElement.innerHTML = `
         <h2>${person.firstName} ${person.lastName}</h2>
-        <p>${}</p>
+        <p>${person.elixirs.name}</p>
       `;
       mainHtmlElement.appendChild(newElement);
     }
@@ -23,11 +22,6 @@ window.onload = async() => {
 async function getAllCharacters() {
   const response = await fetch(`${baseUrl}/Wizards`);
   const data = await response.json();
-  return data.elixirs;
+  return data;
 }
 
-async function getAllElixirs() {
-  const response = await fetch(`${baseUrl}/Wizards`);
-  const data = await response.json();
-  return data.elixirs;
-}
