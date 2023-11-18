@@ -32,21 +32,37 @@ h1{
   position: relative;
   width: 80%;
   margin: 50px auto;
+  background-color: #000066;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: #CD7F32;
 }
 
-.destacat{
-  text-decoration-color: blue;
+h2{
+  text-align: center;
+  position: relative;
+  width: 80%;
+  margin: 50px auto;
+  background-color: aliceblue;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: #000066;
+}
+
+.parentesis{
+  text-align: center;
 }
 
 body{
   margin: 50px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
   
 }
 
 #ventanaDestacados{
   position: fixed;
   right: 50px;
-  background-color: #FFECB3;
+  background-color: aliceblue;
+
+  /* #FFECB3 */
 }
 
 @keyframes rotation {
@@ -71,6 +87,7 @@ body{
   width: 80%;
   grid-template-columns: repeat(2,minmax(50px,1fr)); 
   gap:60px;
+ 
 }
 
 .wrapper img{

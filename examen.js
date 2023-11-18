@@ -11,7 +11,7 @@ window.onload = async() => {
     const mainHtmlElementH = document.getElementById('wrapper');
     const newElementH = document.createElement('div');
     newElementH.innerHTML = `
-      <h2>${house.name}</h2>
+      <h3>${house.name}</h3>
       `
       if (house.name==="Gryffindor"){
         newElementH.innerHTML +=
@@ -41,7 +41,7 @@ window.onload = async() => {
     const mainHtmlElement = document.getElementById('main');
     const newElement = document.createElement('div');
     newElement.innerHTML = `
-      <h2>${person.firstName} ${person.lastName}</h2>
+      <h3>${person.firstName} ${person.lastName}</h3>
       <button onclick="addDestacat('${person.firstName}','${person.lastName}')">Destaca a ${person.firstName} ${person.lastName}</button>`
        for (const elixir of person.elixirs) {
         newElement.innerHTML += `
