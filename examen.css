@@ -42,9 +42,14 @@ h2{
   position: relative;
   width: 80%;
   margin: 50px auto;
-  background-color: aliceblue;
+  background-color: rgb(206, 227, 246);
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: #000066;
+}
+
+.wizard{
+  color:#939090;
+  text-decoration:underline;
 }
 
 .parentesis{
@@ -52,15 +57,20 @@ h2{
 }
 
 body{
-  margin: 50px;
+  margin: 100px;
   font-family:Georgia, 'Times New Roman', Times, serif;
   
+}
+
+.negrita{
+  text-decoration:underline;
 }
 
 #ventanaDestacados{
   position: fixed;
   right: 50px;
-  background-color: aliceblue;
+  background-color: #CD7F32;
+  color:#000066;
 
   /* #FFECB3 */
 }
@@ -83,7 +93,7 @@ body{
 } 
 .wrapper {
   display: grid;
-  margin: 100px auto 100px;
+  margin: 100px 180px 100px;
   width: 80%;
   grid-template-columns: repeat(2,minmax(50px,1fr)); 
   gap:60px;

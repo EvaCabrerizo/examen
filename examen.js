@@ -48,8 +48,9 @@ window.onload = async() => {
     const mainHtmlElement = document.getElementById('main');
     const newElement = document.createElement('div');
     newElement.innerHTML = `
-      <h3>${person.firstName} ${person.lastName}</h3>
-      <button onclick="addDestacat('${person.firstName}','${person.lastName}')">Destaca a ${person.firstName} ${person.lastName}</button>`
+      <h3 class="wizard">${person.firstName} ${person.lastName}</h3>
+      <button onclick="addDestacat('${person.firstName}','${person.lastName}')">Destaca a ${person.firstName} ${person.lastName}</button>
+      <p class="negrita">Elixirs:</p>`
        for (const elixir of person.elixirs) {
         newElement.innerHTML += `
            <p>${elixir.name}</p>
