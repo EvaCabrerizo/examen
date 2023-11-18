@@ -46,6 +46,7 @@ body{
 #ventanaDestacados{
   position: fixed;
   right: 50px;
+  background-color: #FFECB3;
 }
 
 @keyframes rotation {

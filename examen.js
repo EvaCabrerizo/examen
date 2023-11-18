@@ -16,17 +16,24 @@ window.onload = async() => {
       if (house.name==="Gryffindor"){
         newElementH.innerHTML +=
         `<img src="Gryffindor.jpg" alt ="imagen escudo gryffindor" width="300" height="350">
+        <br></br>
         <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`
       } else if (house.name==="Hufflepuff"){
         newElementH.innerHTML +=
         `<img src="Hufflepuff.jpg" alt ="imagen escudo Hufflepuff" width="300" height="350">
-        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      } else if (house.name==="Ravenclaw"){
+        <br></br>
+        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`    
+        } else if (house.name==="Ravenclaw"){
         newElementH.innerHTML +=
         `<img src="Ravenclaw.jpg" alt ="imagen escudo Ravenclaw" width="300" height="350">
-        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      } else if (house.name==="Slytherin"){
+        <br></br>
+        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      
+      } else if (house.name==="Slytherin"){
         newElementH.innerHTML +=
         `<img src="Slytherin.jpg" alt ="imagen escudo Slytherin" width="300" height="350">
-        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      }
+        <br></br>
+        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      
+      }
     mainHtmlElementH.appendChild(newElementH);
     }
 
