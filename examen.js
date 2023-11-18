@@ -11,9 +11,24 @@ window.onload = async() => {
     const mainHtmlElementH = document.getElementById('main');
     const newElementH = document.createElement('div');
     newElementH.innerHTML = `
-      <h2>${house.name}</h2>`
-     mainHtmlElementH.appendChild(newElementH);
-        }
+      <h2>${house.name}</h2>
+      `
+      if (house.name==="Gryffindor"){
+        newElementH.innerHTML +=
+        `<img src="Gryffindor.jpg" alt ="imagen escudo gryffindor" width="300" height="350">
+        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`
+      } else if (house.name==="Hufflepuff"){
+        newElementH.innerHTML +=
+        `<img src="Hufflepuff.jpg" alt ="imagen escudo Hufflepuff" width="300" height="350">
+        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      } else if (house.name==="Ravenclaw"){
+        newElementH.innerHTML +=
+        `<img src="Ravenclaw.jpg" alt ="imagen escudo Ravenclaw" width="300" height="350">
+        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      } else if (house.name==="Slytherin"){
+        newElementH.innerHTML +=
+        `<img src="Slytherin.jpg" alt ="imagen escudo Slytherin" width="300" height="350">
+        <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      }
+    mainHtmlElementH.appendChild(newElementH);
+    }
 
   for (const person of persons) {
     const mainHtmlElement = document.getElementById('main');
@@ -60,11 +75,11 @@ async function elixirClicat(id,name) {
 async function addDestacat(firstName,lastName) {
   const mainHtmlElement = document.getElementById('destacat');
     if (mainHtmlElement) {
-      mainHtmlElement.innerHTML = `Destacat: ${firstName} ${lastName}`;
+      mainHtmlElement.innerHTML = `Personatge destacat: ${firstName} ${lastName}`;
   } else {
       const newElement = document.createElement('p');
       newElement.innerHTML = `
-      <p>Destacat: ${firstName} ${lastName}</p>`
+      <p>Personatge destacat: ${firstName} ${lastName}</p>`
       mainHtmlElement.appendChild(newElement);
 }
 }
@@ -73,4 +88,16 @@ async function getAllHouses() {
   const response = await fetch(`${baseUrl}/Houses`);
   const data = await response.json();
   return data;
+}
+
+async function addDestacatHouse(name) {
+  const mainHtmlElement = document.getElementById('destacatHouse');
+    if (mainHtmlElement) {
+      mainHtmlElement.innerHTML = `Casa destacada: ${name}`;
+  } else {
+      const newElement = document.createElement('p');
+      newElement.innerHTML = `
+      <p>Casa destacada: ${name}</p>`
+      mainHtmlElement.appendChild(newElement);
+}
 }

@@ -27,6 +27,13 @@
   transform-origin: center center;
 }
 
+h1{
+  text-align: center;
+  position: relative;
+  width: 80%;
+  margin: 50px auto;
+}
+
 .destacat{
   text-decoration-color: blue;
 }
@@ -49,4 +56,13 @@
 } 
 .wrapper {
   display: grid;
+  margin: 100px auto 100px;
+  width: 80%;
+  grid-template-columns: repeat(2,minmax(50px,1fr)); 
+  gap:60px;
+}
+
+.wrapper img{
+  cursor: pointer;
+  box-shadow: #000;
 }
