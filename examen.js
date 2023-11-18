@@ -34,6 +34,13 @@ window.onload = async() => {
         <br></br>
         <button onclick="addDestacatHouse('${house.name}')">Destaca a ${house.name}</button>`      
       }
+      newElementH.innerHTML +=
+      `<p>Colors: ${house.houseColours}</p>
+        <p>Fundador: ${house.founder}</p>
+        <p>Animal: ${house.animal}</p>
+        <p>Element: ${house.element}</p>
+        <p>Fantasma: ${house.ghost}</p>
+        <p>Sala comú: ${house.commonRoom}</p>`
     mainHtmlElementH.appendChild(newElementH);
     }
 
@@ -68,14 +75,15 @@ async function getAllIngredients(id) {
 
 async function elixirClicat(id,name) {
   const ingredients = await getAllIngredients(id);
-  for (const ingredient of ingredients) {
-    const mainHtmlElement = document.getElementById('ingredients');
+  const mainHtmlElement = document.getElementById('ingredients');
     const newElement = document.createElement('div');
     newElement.innerHTML = `
-      <h3>${name}</h3>
+      <h3>${name}</h3>`
+  for (const ingredient of ingredients) {
+    newElement.innerHTML += `
       <p>${ingredient.name}</p>`
-      mainHtmlElement.appendChild(newElement);
- }
+  }
+  mainHtmlElement.appendChild(newElement);
   return ingredients;
 }
 
