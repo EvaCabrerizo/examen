@@ -8,7 +8,7 @@ window.onload = async() => {
   spinnerHtmlElement.remove();
 
   for (const house of houses) {
-    const mainHtmlElementH = document.getElementById('main');
+    const mainHtmlElementH = document.getElementById('wrapper');
     const newElementH = document.createElement('div');
     newElementH.innerHTML = `
       <h2>${house.name}</h2>

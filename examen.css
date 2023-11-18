@@ -74,6 +74,8 @@ body{
 }
 
 .wrapper img{
-  cursor: pointer;
   box-shadow: #000;
+}
+button{
+  cursor:pointer;
 }
