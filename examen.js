@@ -24,9 +24,9 @@ window.onload = async() => {
        for (const elixir of person.elixirs) {
         newElement.innerHTML += `
            <p>${elixir.name}</p>
-           <button onclick="elixirClicat('${elixir.id}','${elixir.name}')">Show ingredients of ${elixir.name}</button>
-           <div id="ingredients"></div>
-           `  
+           <button onclick="elixirClicat('${elixir.id}','${elixir.name}')">Show ingredients of ${elixir.name}</button>`
+           //<div id="ingredients"></div>
+             
          }  
      mainHtmlElement.appendChild(newElement);
         }
