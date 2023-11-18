@@ -37,7 +37,17 @@ h1{
 .destacat{
   text-decoration-color: blue;
 }
-    
+
+body{
+  margin: 50px;
+  
+}
+
+#ventanaDestacados{
+  position: fixed;
+  right: 50px;
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
