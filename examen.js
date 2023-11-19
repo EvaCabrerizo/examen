@@ -7,6 +7,7 @@ window.onload = async() => {
   const spinnerHtmlElement = document.getElementById('spinner');
   spinnerHtmlElement.remove();
 
+  //cases
   for (const house of houses) {
     const mainHtmlElementH = document.getElementById('wrapper');
     const newElementH = document.createElement('div');
@@ -44,8 +45,8 @@ window.onload = async() => {
     mainHtmlElementH.appendChild(newElementH);
     }
   
-   // <form onsubmit="return validarFormulari(this)">
-   // </form>
+  
+  //test
   const mainHtmlElementG = document.getElementById('test');
   const newElementG = document.createElement('select');
   newElementG.innerHTML = `
@@ -96,10 +97,8 @@ window.onload = async() => {
     `<input type="submit" value="Enviar"/>`
   mainHtmlElementA.appendChild(newElementA);
 
-  
 
-
-
+//personatges
   for (const person of persons) {
     const mainHtmlElement = document.getElementById('main');
     const newElement = document.createElement('div');
@@ -181,14 +180,3 @@ async function test(){
 
 }
 
-function validarFormulari(form) {
-  if (form.elements['user-password'].value.length < 8) {
-    console.error('La contrasenya és massa curta');
-    const errorsFormulari = document.getElementById('errors-formulari');
-    errorsFormulari.innerText = "La contrasenya és massa curta";
-    return false;
-  }
-  const errorsFormulari = document.getElementById('errors-formulari');
-  errorsFormulari.innerText = "";
-  return true;
-}
