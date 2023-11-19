@@ -3,6 +3,7 @@ const baseUrl = 'https://wizard-world-api.herokuapp.com';
 window.onload = async() => {
   const persons = await getAllCharacters();
   const houses = await getAllHouses();
+  const spells = await getAllSpells();
 
   const spinnerHtmlElement = document.getElementById('spinner');
   spinnerHtmlElement.remove();
@@ -117,6 +118,23 @@ window.onload = async() => {
          }  
      mainHtmlElement.appendChild(newElement);
         }
+  
+  //spells
+  for (const spell of spells) {
+    const mainHtmlElement = document.getElementById('spells');
+    const newElement = document.createElement('div');
+    if(spell.incantation === "Nox"){
+    newElement.innerHTML = `
+      <h3 class="wizard">${spell.name}</h3>
+      <p>Encanteri: ${spell.incantation} / Efecte: ${spell.effect} / Tipus: ${spell.type} / Llum: ${spell.light}</p>`
+     mainHtmlElement.appendChild(newElement);
+      newElement.innerHTML +=
+      `<button onmouseover="nox()" >Show me ${spell.incantation}</button>`
+     }
+    
+    }
+    
+
   };
 
 async function getAllCharacters() {
@@ -129,6 +147,12 @@ async function getAllIngredients(id) {
   const response = await fetch(`${baseUrl}/Elixirs/${id}`);
   const data = await response.json();
   return data.ingredients;
+}
+
+async function getAllSpells() {
+  const response = await fetch(`${baseUrl}/Spells`);
+  const data = await response.json();
+  return data;
 }
 
 async function elixirClicat(id,name) {
@@ -173,6 +197,17 @@ async function addDestacatHouse(name) {
       <p>Casa destacada: ${name}</p>`
       mainHtmlElement.appendChild(newElement);
 }
+}
+
+
+function nox() {
+  const nox = document.getElementById(`body`);
+  nox.className = "nox";
+}
+
+function noxOut() {
+  const nox = document.getElementById(`body`);
+  nox.className = "";
 }
 
 async function test(){
