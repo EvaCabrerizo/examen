@@ -129,8 +129,19 @@ window.onload = async() => {
       <p>Encanteri: ${spell.incantation} / Efecte: ${spell.effect} / Tipus: ${spell.type} / Llum: ${spell.light}</p>`
      mainHtmlElement.appendChild(newElement);
       newElement.innerHTML +=
-      `<button onmouseover="nox()" >Show me ${spell.incantation}</button>`
+      `<button onmouseover="nox()" >Show me ${spell.incantation}</button>
+      <button onmouseover="spellOut()" >Stop ${spell.incantation}</button>`
      }
+
+     if(spell.incantation === "Lumos"){
+      newElement.innerHTML = `
+        <h3 class="wizard">${spell.name}</h3>
+        <p>Encanteri: ${spell.incantation} / Efecte: ${spell.effect} / Tipus: ${spell.type} / Llum: ${spell.light}</p>`
+       mainHtmlElement.appendChild(newElement);
+        newElement.innerHTML +=
+        `<button onmouseover="lumos()" >Show me ${spell.incantation}</button>
+        <button onmouseover="spellOut()" >Stop ${spell.incantation}</button>`
+       }
     
     }
     
@@ -205,10 +216,16 @@ function nox() {
   nox.className = "nox";
 }
 
-function noxOut() {
-  const nox = document.getElementById(`body`);
-  nox.className = "";
+function spellOut() {
+  const spell = document.getElementById(`body`);
+  spell.className = "";
 }
+
+function lumos() {
+  const lumos = document.getElementById(`body`);
+  lumos.className = "lumos";
+}
+
 
 async function test(){
   const houses = await getAllHouses();
