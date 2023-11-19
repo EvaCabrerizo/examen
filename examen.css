@@ -98,10 +98,12 @@ body{
     max-width:100%;
     height: auto;
     display: block;
+    flex-direction: column;
   }
   .wrapper{
-    display: block;
+    display: flex;
     text-align: center;
+    flex-direction: column;
   }
 }
 .wrapper {
