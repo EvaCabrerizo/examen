@@ -1,3 +1,4 @@
+
 .loader {
   width: 48px;
   height: 48px;
@@ -27,6 +28,9 @@
   transform-origin: center center;
 }
 
+header{
+  background-color: #000066;
+}
 h1{
   text-align: center;
   position: relative;
@@ -48,8 +52,8 @@ h2{
 }
 
 .wizard{
-  color:#939090;
-  text-decoration:underline;
+  color:#800080;
+  /* text-decoration:underline; */
 }
 
 .parentesis{
@@ -59,11 +63,8 @@ h2{
 body{
   margin: 100px;
   font-family:Georgia, 'Times New Roman', Times, serif;
+  background-color: aliceblue;
   
-}
-
-.negrita{
-  text-decoration:underline;
 }
 
 #ventanaDestacados{
@@ -71,7 +72,7 @@ body{
   right: 50px;
   background-color: #CD7F32;
   color:#000066;
-
+  z-index:2;
   /* #FFECB3 */
 }
 
@@ -91,6 +92,18 @@ body{
     transform: rotate(-360deg);
   }
 } 
+
+@media screen and (max-width:600px){
+  img{
+    max-width:100%;
+    height: auto;
+    display: block;
+  }
+  .wrapper{
+    display: block;
+    text-align: center;
+  }
+}
 .wrapper {
   display: grid;
   margin: 100px 180px 100px;
@@ -100,9 +113,7 @@ body{
  
 }
 
-.wrapper img{
-  box-shadow: #000;
-}
 button{
   cursor:pointer;
 }
+

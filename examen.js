@@ -43,6 +43,62 @@ window.onload = async() => {
         <p>Sala comú: ${house.commonRoom}</p>`
     mainHtmlElementH.appendChild(newElementH);
     }
+  
+   // <form onsubmit="return validarFormulari(this)">
+   // </form>
+  const mainHtmlElementG = document.getElementById('test');
+  const newElementG = document.createElement('select');
+  newElementG.innerHTML = `
+    <label>Fantasma</label>`
+      for (const house of houses) {
+        newElementG.innerHTML +=
+        `<option>${house.ghost}</option>
+        `
+      }
+  newElementG.innerHTML +=
+  `<input type="submit" value="Enviar"/>
+  <br></br>`
+  mainHtmlElementG.appendChild(newElementG);
+  
+  const mainHtmlElementC = document.getElementById('test');
+  const newElementC = document.createElement('select');
+  newElementC.innerHTML = `
+    <label>houseColours</label>`
+      for (const house of houses) {
+        newElementC.innerHTML +=
+          `<option>${house.houseColours}</option>`
+      }
+  newElementC.innerHTML +=
+    `<input type="submit" value="Enviar"/>`
+  mainHtmlElementC.appendChild(newElementC);
+
+  const mainHtmlElementF = document.getElementById('test');
+  const newElementF = document.createElement('select');
+  newElementF.innerHTML = `
+    <label>founder</label>`
+      for (const house of houses) {
+        newElementF.innerHTML +=
+        `<option>${house.founder}</option>`
+      }
+  newElementF.innerHTML +=
+  `<input type="submit" value="Enviar"/>`
+  mainHtmlElementF.appendChild(newElementF);
+  
+  const mainHtmlElementA = document.getElementById('test');
+  const newElementA = document.createElement('select');
+  newElementA.innerHTML = `
+    <label>animal</label>`
+      for (const house of houses) {
+        newElementA.innerHTML +=
+          `<option>${house.animal}</option>`
+      }
+  newElementA.innerHTML +=
+    `<input type="submit" value="Enviar"/>`
+  mainHtmlElementA.appendChild(newElementA);
+
+  
+
+
 
   for (const person of persons) {
     const mainHtmlElement = document.getElementById('main');
@@ -50,11 +106,13 @@ window.onload = async() => {
     newElement.innerHTML = `
       <h3 class="wizard">${person.firstName} ${person.lastName}</h3>
       <button onclick="addDestacat('${person.firstName}','${person.lastName}')">Destaca a ${person.firstName} ${person.lastName}</button>
-      <p class="negrita">Elixirs:</p>`
+      <br></br>
+      <a href="#ingredients">Elixirs:</a>`
        for (const elixir of person.elixirs) {
         newElement.innerHTML += `
            <p>${elixir.name}</p>
-           <button onclick="elixirClicat('${elixir.id}','${elixir.name}')">Show ingredients of ${elixir.name}</button>`
+           <a href="#ingredients">
+           <button onclick="elixirClicat('${elixir.id}','${elixir.name}')">Show ingredients of ${elixir.name}</button></a>`
            //<div id="ingredients"></div>
              
          }  
@@ -116,4 +174,21 @@ async function addDestacatHouse(name) {
       <p>Casa destacada: ${name}</p>`
       mainHtmlElement.appendChild(newElement);
 }
+}
+
+async function test(){
+  const houses = await getAllHouses();
+
+}
+
+function validarFormulari(form) {
+  if (form.elements['user-password'].value.length < 8) {
+    console.error('La contrasenya és massa curta');
+    const errorsFormulari = document.getElementById('errors-formulari');
+    errorsFormulari.innerText = "La contrasenya és massa curta";
+    return false;
+  }
+  const errorsFormulari = document.getElementById('errors-formulari');
+  errorsFormulari.innerText = "";
+  return true;
 }
